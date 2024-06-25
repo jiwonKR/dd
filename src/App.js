@@ -1,22 +1,31 @@
-import { useEffect } from 'react';
+// App.js
+import React, { useEffect } from 'react';
 import './App.css';
-
+import SearchIcon from './search.svg'; // 파일 경로는 실제 파일 위치에 맞게 수정
 
 const API_URL = 'http://www.omdbapi.com?apikey=f58e8343';
 
 const App = () => {
-  <h1>안녕</h1>;
   const searchMovies = async (title) => {
-    const response = await fetch(`${API_URL}&s=${title}`); //검색쿼리를 설정하는일
+    const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
-
-    console.log(data.Search); //data.Search는 db의 API에서 제공하는 기능.
+    console.log(data.Search);
   };
 
   useEffect(() => {
-    //useEffect 훅을 사용하여 컴포넌트가 마운트될때 한번 실행된는 함수호출.
     searchMovies('spiderman');
   }, []);
+
+  return (
+    <div className='app'>
+      <h1>Movie Land</h1>
+
+      <div className='search'>
+        <input placeholder='Search for movies' value='Superman' onChange={() => {}} />
+        <img src={SearchIcon} alt='search' />
+      </div>
+    </div>
+  );
 };
 
 export default App;

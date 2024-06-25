@@ -47,11 +47,11 @@ h1 {
   padding: 1.5rem 1.75rem;
   border-radius: 3rem;
   background: #1f2123;
-  -webkit-box-shadow:
+  -webkit-box-shadow: /*webkit기반의 음영효과*/
     5px 5px 7px #1c1d1f,
     -5px -5px 7px #222527;
   box-shadow:
-    5px 5px 7px #1c1d1f,
+    5px 5px 7px #fff308,
     -5px -5px 7px #222527;
 }
 
@@ -72,6 +72,7 @@ h1 {
   width: 35px;
   height: 35px;
   cursor: pointer;
+  color: red;
 }
 
 /* .search button {
