@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import SearchIcon from './search.svg'; // 파일 경로는 실제 파일 위치에 맞게 수정
+import MovieCard from './MovieCard';
 
 const API_URL = 'http://www.omdbapi.com?apikey=f58e8343';
 
@@ -38,15 +39,7 @@ const App = () => {
       </div>
 
       <div className="container">
-        <div className="movie">
-          <div>
-            <p>{movie1.Year}</p>
-          </div>
-
-          <div>
-            <img src={movie1.Poster} alt={movie1.Title} />
-          </div>
-        </div>
+        <MovieCard movie1={movie1} />
       </div>
     </div>
   );
